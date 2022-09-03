@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>INSERT INTO 결과</title>
 </head>
 <body>
 	<% 
@@ -23,17 +23,17 @@
 			ps.setString(2,pw);
 			ps.setString(3,username);
 			int num=ps.executeUpdate();
-			System.out.println("members 테이블 데이터 추가 성공!");
+			out.print("members 테이블 데이터 추가 성공! <br>");
 		}catch(SQLException e){
-			System.out.println("members 테이블 추가 실패 ");
+			out.print("members 테이블 추가 실패 <br>");
 			e.printStackTrace();
 		}finally{
 			//	sql 문이 성공, 실패 여부 상관없이 최종적으로는 반드시 연결을 닫아주어야한다.
 			if(ps!=null)ps.close();
 			if(con!=null)con.close();		
 		}
-		
 	%>
+	<a href="select_statement.jsp">회원 목록 보기</a>
 	
 </body>
 </html>

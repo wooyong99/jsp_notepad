@@ -33,7 +33,7 @@
 	<div class="jumbotron bg-secondary">
 		<div class="container">
 			<div class="text-center">
-				<h1 class="display-3"><%=greeting %></h1>
+				<h1 class="display-3" style="font-color:white;"><%=greeting %></h1>
 			</div>
 		</div>
 	</div>
