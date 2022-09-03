@@ -39,7 +39,7 @@
 		}
 		%>
 	</table>
-	<a href="insert_form.jsp">회원 가입 페이지</a>
+	<br><a href="insert_form.jsp">회원 가입 페이지</a>
 
 </body>
 </html>

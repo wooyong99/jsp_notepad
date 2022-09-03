@@ -33,7 +33,8 @@
 			if(con!=null)con.close();		
 		}
 	%>
-	<a href="select_statement.jsp">회원 목록 보기</a>
+	<br><a href="select_statement.jsp">회원 목록 보기</a><br>
+	<a href="update_form.jsp">회원 정보 수정하기</a>
 	
 </body>
 </html>
