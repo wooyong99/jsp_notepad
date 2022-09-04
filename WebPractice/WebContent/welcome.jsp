@@ -41,6 +41,7 @@
 		<div class="text-center">
 			<h3><%=tagline %></h3>
 			<%
+				response.setIntHeader("Refresh",1);
 				Date now =new Date();
 				SimpleDateFormat sdf=new SimpleDateFormat("HH:mm:ss");
 			%>

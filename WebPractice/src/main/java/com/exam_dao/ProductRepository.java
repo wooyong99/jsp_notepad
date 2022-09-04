@@ -43,6 +43,7 @@ public class ProductRepository {
 		for(Product product:product_list) {
 			if(product.getProduct_Id().equals(id)) {
 				rs=product;
+				break;
 			}
 		}return rs;
 	}
