@@ -37,5 +37,14 @@ public class ProductRepository {
 	public ArrayList<Product> getAllProducts(){
 		return product_list;
 	}
+	// 매개변수 Id 값으로 Product를 return 하는 메소드.
+	public Product getProductById(String id) {
+		Product rs=null;
+		for(Product product:product_list) {
+			if(product.getProduct_Id().equals(id)) {
+				rs=product;
+			}
+		}return rs;
+	}
 
 }

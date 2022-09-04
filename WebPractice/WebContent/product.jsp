@@ -21,13 +21,8 @@
 	<% 
 		request.setCharacterEncoding("UTF-8");
 		String rq_id=request.getParameter("id");
-		ArrayList<Product> products = product_repository.getAllProducts();
-		Product product=null;
-		for(Product val : products){
-			if(val.getProduct_Id().equals(rq_id)){
-				product=val;
-			}
-		}
+		// getProductById 메소드로 id값과 일치하는 product를 가져옴.
+		Product product = product_repository.getProductById(rq_id); 
 	%>
 	<div class="jumbotron bg-secondary">
 		<div class="container">
