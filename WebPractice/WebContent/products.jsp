@@ -41,7 +41,7 @@
 	<%
 		// 상품 목록 가져오기 위한 코드.
 		// bean으로 등록한 productDAO에 getAllProducts 메소드를 호출하여 저장된 상품 목록을 가져오는 코드이다.
-		ArrayList<Product> product_list = (ArrayList<Product>)ProductRepository.getAllProducts();
+		ArrayList<Product> product_list = (ArrayList<Product>)productDAO.getAllProducts();
 	%>
 	<div class="container">
 		<div class="row" align="center">
@@ -54,6 +54,8 @@
 				<h3><%=product.getProduct_name() %></h3>
 				<p><%=product.getProduct_desc() %></p>
 				<p><%=product.getProduct_price() %>원</p>
+				<p><a href="./product.jsp?id=<%= product.getProduct_Id()%>" 
+				class="btn btn-secondary" role="button">Product Detail &raquo;</a></p>
 			</div>
 			<%} %>
 		</div>

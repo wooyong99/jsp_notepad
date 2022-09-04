@@ -29,12 +29,12 @@ public class ProductRepository {
 		tablet.setProduct_stock(500);
 		tablet.setCondition("Old");
 		
-		this.product_list.add(phone);
-		this.product_list.add(notebook);
-		this.product_list.add(tablet);
+		product_list.add(phone);
+		product_list.add(notebook);
+		product_list.add(tablet);
 	}
 	
-	public static ArrayList<Product> getAllProducts(){
+	public ArrayList<Product> getAllProducts(){
 		return product_list;
 	}
 
