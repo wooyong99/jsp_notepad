@@ -13,7 +13,7 @@
 	request.setCharacterEncoding("UTF-8");
 %>
 <!-- 상품 목록을 저장하는 ProductRepository를 bean으로 등록하기 위해서 usebean태그 사용함. -->
-<jsp:useBean id="productDAO" class="com.exam_dao.ProductRepository" scope="session"></jsp:useBean>
+<%-- <jsp:useBean id="productDAO" class="com.exam_dao.ProductRepository" scope="session"></jsp:useBean> --%>
 <style>
 	.jumbotron{
 		padding-top:40px;
@@ -41,7 +41,8 @@
 	<%
 		// 상품 목록 가져오기 위한 코드.
 		// bean으로 등록한 productDAO에 getAllProducts 메소드를 호출하여 저장된 상품 목록을 가져오는 코드이다.
-		ArrayList<Product> product_list = (ArrayList<Product>)productDAO.getAllProducts();
+		ProductRepository productDAO = ProductRepository.getInstance();
+		ArrayList<Product> product_list = productDAO.getAllProducts();
 	%>
 	<div class="container">
 		<div class="row" align="center">

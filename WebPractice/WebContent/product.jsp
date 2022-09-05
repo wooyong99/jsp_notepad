@@ -1,3 +1,4 @@
+<%@page import="com.exam_dao.ProductRepository"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.exam_dto.Product"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -21,12 +22,12 @@
 </head>
 <body>
 	<jsp:include page="menu.jsp"></jsp:include>
-	<jsp:useBean id="product_repository" class="com.exam_dao.ProductRepository" scope="session"></jsp:useBean>
+	<% ProductRepository prodcutDAO = ProductRepository.getInstance(); %>
 	<% 
 		request.setCharacterEncoding("UTF-8");
 		String rq_id=request.getParameter("id");
 		// getProductById 메소드로 id값과 일치하는 product를 가져옴.
-		Product product = product_repository.getProductById(rq_id); 
+		Product product = prodcutDAO.getProductById(rq_id); 
 	%>
 	<div class="jumbotron bg-secondary">
 		<div class="container">

@@ -6,8 +6,13 @@ import com.exam_dto.Product;
 
 public class ProductRepository {
 	
-	private static ArrayList<Product> product_list=new ArrayList<>();
-	public ProductRepository() {
+	private ArrayList<Product> product_list=new ArrayList<>();
+	private static ProductRepository instance = new ProductRepository();
+	public static ProductRepository getInstance() {
+		return instance;
+	}
+	
+	private ProductRepository() {
 		Product phone = new Product("P1234", "iPhone 13", 1200000);
 		phone.setProduct_desc("디스플레이는 6.1인치 19:5:9비율의 2531x1170 해상도를 지원한다.");
 		phone.setCategory("Smart Phone");
@@ -46,6 +51,9 @@ public class ProductRepository {
 				break;
 			}
 		}return rs;
+	}
+	public void addProduct(Product product) {
+		product_list.add(product);
 	}
 
 }
