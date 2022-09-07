@@ -22,12 +22,12 @@
 </head>
 <body>
 	<jsp:include page="menu.jsp"></jsp:include>
-	<% ProductRepository prodcutDAO = ProductRepository.getInstance(); %>
+	<% ProductRepository productDAO = ProductRepository.getInstance(); %>
 	<% 
 		request.setCharacterEncoding("UTF-8");
 		String rq_id=request.getParameter("id");
 		// getProductById 메소드로 id값과 일치하는 product를 가져옴.
-		Product product = prodcutDAO.getProductById(rq_id); 
+		Product product = productDAO.getProductById(rq_id); 
 	%>
 	<div class="jumbotron bg-secondary">
 		<div class="container">

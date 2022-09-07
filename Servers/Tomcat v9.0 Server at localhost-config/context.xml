@@ -26,4 +26,23 @@
     <!--
     <Manager pathname="" />
     -->
+    
+    <!-- DBCP를 사용하기 위한 설정 코드이다. 즉, 웹서버에서 Connection을 미리 생성하여 준비한 다음, 필요할때 가져다
+    사용하는 Connection Pool을 설정하는것. -->
+    <!-- name은 DataSource 클래스의 이름 / auth는 인증주체 /  -->
+    <Resource
+    	name = "jdbc/dbconn"	
+    	auth="Container"
+    	driverClassName="com.mysql.jdbc.Driver"
+    	url="jdbc:mysql://localhost:3307/testdb"
+    	username="root"
+    	password="1234"
+    	type="javax.sql.DataSource"
+    	maxActive = "50"
+    	maxIdle = "10"
+    	maxWait = "5000"
+    />
+    	
+    
+    
 </Context>

@@ -40,7 +40,7 @@
 	</div>
 	<%
 		// 상품 목록 가져오기 위한 코드.
-		// bean으로 등록한 productDAO에 getAllProducts 메소드를 호출하여 저장된 상품 목록을 가져오는 코드이다.
+		// ProductRepository 클래스는 싱글톤 패턴 형식이므로 getInstance() 메소드를 호출하여 인스턴스 객체를 받아온다.
 		ProductRepository productDAO = ProductRepository.getInstance();
 		ArrayList<Product> product_list = productDAO.getAllProducts();
 	%>
