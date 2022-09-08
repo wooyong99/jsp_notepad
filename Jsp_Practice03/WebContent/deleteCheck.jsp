@@ -17,7 +17,7 @@
 	<jsp:setProperty property="*" name="dto"/>
 	<%
 		MemberDAO dao=new MemberDAO();
-		dao.addMember(dto);
+		dao.deleteMember(dto);
 		response.sendRedirect("memberlist.jsp");
 	%>
 </body>

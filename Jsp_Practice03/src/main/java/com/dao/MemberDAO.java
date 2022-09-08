@@ -66,18 +66,30 @@ public class MemberDAO {
 		return member_list;
 	}
 	// DB에 데이터를 Insert하는 메서드
-	public void addMember(String username, String id, String pw, String phone1, String phone2, String phone3, String gender) {
+	public void addMember(MemberDTO member) {
 		String sql = "insert into memberdto values (?,?,?,?,?,?,?)";
 		try {
 			ps=connection.prepareStatement(sql);
-			ps.setString(1, username);
-			ps.setString(2, id);
-			ps.setString(3, pw);
-			ps.setString(4, phone1);
-			ps.setString(5, phone2);
-			ps.setString(6, phone3);
-			ps.setString(7, gender);
+			ps.setString(1, member.getUsername());
+			ps.setString(2, member.getId());
+			ps.setString(3, member.getPw());
+			ps.setString(4, member.getPhone1());
+			ps.setString(5, member.getPhone2());
+			ps.setString(6, member.getPhone3());
+			ps.setString(7, member.getGender());
 			ps.executeUpdate();
 		} catch (SQLException e) { e.printStackTrace(); }
+	}
+	// DB에 데이터를 DELETE하는 메소드
+	public void deleteMember(MemberDTO member) {
+		String sql = "delete from memberdto where username=? and id=? and pw=?";
+		try {
+			ps=connection.prepareStatement(sql);
+			ps.setString(1, member.getUsername());
+			ps.setString(2, member.getId());
+			ps.setString(3, member.getPw());
+			ps.executeUpdate();
+		} catch(Exception e) { e.printStackTrace(); }
+		
 	}
 }
