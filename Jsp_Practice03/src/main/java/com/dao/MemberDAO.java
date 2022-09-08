@@ -24,11 +24,6 @@ public class MemberDAO {
 	private Context context ;
 	
 	public MemberDAO() {
-		System.out.println("DAO 생성자 호출");
-		System.out.println("생성자 스레드 명 : "+Thread.currentThread().getName());
-	}
-	// context.xml에서 설정한 DBCP에서 Connection 객체를 불러오는 메소드
-	public Connection getConnection() {
 		try {
 			context = new InitialContext();
 			dataSource = (DataSource)context.lookup("java:comp/env/"+"jdbc/dbconn");
@@ -38,20 +33,29 @@ public class MemberDAO {
 		}catch(Exception e) {
 			System.out.println(e.getMessage());
 		}
-		return connection;
+		System.out.println("DAO 생성자 호출");
 	}
-	
+	// context.xml에서 설정한 DBCP에서 Connection 객체를 불러오는 메소드
+	/*
+	 * public Connection getConnection() { try { context = new InitialContext();
+	 * dataSource = (DataSource)context.lookup("java:comp/env/"+"jdbc/dbconn");
+	 * connection = dataSource.getConnection();
+	 * System.out.println("DBCP Connection 객체 호출 성공");
+	 * System.out.println("getConnection 스레드 명 : "+Thread.currentThread().getName())
+	 * ; }catch(Exception e) { System.out.println(e.getMessage()); } return
+	 * connection; }
+	 */
+	// DB에 있는 데이터를 Select하는 메소드 
 	public List<MemberDTO> selectMember(){
 		List<MemberDTO> member_list = new ArrayList<MemberDTO>();
 		try {
-			connection = getConnection();
 			String sql = "select * from memberdto";
 			ps=connection.prepareStatement(sql);
 			rs=ps.executeQuery();
 			while(rs.next()) {
 				MemberDTO member=new MemberDTO(rs.getString("username"), rs.getString("id"),
-						rs.getString("pw"), rs.getString("phone1"), rs.getString("phone1"), 
-						rs.getString("phone1"), rs.getString("gender"));
+						rs.getString("pw"), rs.getString("phone1"), rs.getString("phone2"), 
+						rs.getString("phone3"), rs.getString("gender"));
 				
 				member_list.add(member);
 			}
@@ -60,5 +64,20 @@ public class MemberDAO {
 		} catch (SQLException e) { e.printStackTrace(); }
 		
 		return member_list;
+	}
+	// DB에 데이터를 Insert하는 메서드
+	public void addMember(String username, String id, String pw, String phone1, String phone2, String phone3, String gender) {
+		String sql = "insert into memberdto values (?,?,?,?,?,?,?)";
+		try {
+			ps=connection.prepareStatement(sql);
+			ps.setString(1, username);
+			ps.setString(2, id);
+			ps.setString(3, pw);
+			ps.setString(4, phone1);
+			ps.setString(5, phone2);
+			ps.setString(6, phone3);
+			ps.setString(7, gender);
+			ps.executeUpdate();
+		} catch (SQLException e) { e.printStackTrace(); }
 	}
 }
