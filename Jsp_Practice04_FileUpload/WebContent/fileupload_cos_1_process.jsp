@@ -35,7 +35,8 @@
 			if(file != null){
 				out.print("파일 크기 : "+file.length()+"<br>");
 				out.print("파일 경로 : "+file.getPath()+"<br>");				
-				out.print("최종 수정일 : "+file.lastModified()+"<br>"); 				
+				out.print("최종 수정일 : "+file.lastModified()+"<br>");
+				out.print("---------------------------------------<br>");
 			}
 		}
 	%>
