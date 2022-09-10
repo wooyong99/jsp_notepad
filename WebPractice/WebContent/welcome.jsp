@@ -5,7 +5,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+<!-- CDN 방식 사용 x --> 
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css"/>
 <meta charset="UTF-8">
 <title>Home</title>
 <%

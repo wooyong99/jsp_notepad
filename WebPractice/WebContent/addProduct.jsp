@@ -3,7 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+<!-- CDN 방식 사용 x --> 
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css"/>
 <meta charset="UTF-8">
 <style type="text/css">
 	.jumbotron{
@@ -31,7 +33,7 @@
 		</div>
 	</div>
 	<div class="container">
-		<form name="newProduct" action="./processAddProduct.jsp" method="post" class="form-horizontal">
+		<form name="newProduct" action="./processAddProduct.jsp" method="post" class="form-horizontal" enctype="multipart/form-data">
 			<div class="form-group row">
 				<label class="col-sm-2"><b>Product ID</b></label>
 				<div class="col-sm-3">
@@ -48,6 +50,12 @@
 				<label class="col-sm-2"><b>Product Price</b></label>
 				<div class="col-sm-3">
 					<input type="number" name="product_price" class="form-control" placeholder="상품 가격을 입력해주세요."/>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2"><b>Product Image</b></label>
+				<div class="col-sm-3">
+					<input type="file" name="filename" class="form-control"/>
 				</div>
 			</div>
 			<div class="form-group row">

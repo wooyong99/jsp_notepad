@@ -19,6 +19,7 @@ public class ProductRepository {
 		phone.setManufact("Apple");
 		phone.setProduct_stock(1000);
 		phone.setCondition("New");
+		phone.setFilename("P1234.jpg");
 		
 		Product notebook = new Product("P1235", "LG Gram", 2000000);
 		notebook.setProduct_desc("13.3인치 해상도를 가지고 FULL HD 프로세스를 지원하며, Intel Core Process를 가진다.");
@@ -26,6 +27,7 @@ public class ProductRepository {
 		notebook.setManufact("LG");
 		notebook.setProduct_stock(1000);
 		notebook.setCondition("Refurbished");
+		notebook.setFilename("P1235.jpg");
 		
 		Product tablet = new Product("P1236", "iPad Pro 3", 850000);
 		tablet.setProduct_desc("디스플레이는 모서리가 둥근 형태로, 기기의 아름다운 곡면 디자인을 반영합니다.");
@@ -33,6 +35,7 @@ public class ProductRepository {
 		tablet.setManufact("Apple");
 		tablet.setProduct_stock(500);
 		tablet.setCondition("Old");
+		tablet.setFilename("P1236.jpg");
 		
 		product_list.add(phone);
 		product_list.add(notebook);

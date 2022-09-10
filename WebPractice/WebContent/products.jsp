@@ -6,7 +6,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+<!-- CDN 방식 사용 x --> 
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css"/>
 <meta charset="UTF-8">
 <title>Product List</title>
 <%
@@ -25,6 +27,10 @@
 	}
 	body>hr{
 		margin-top:0;
+	}
+	div.container>.row>div.col-md-4>img{
+		width:65%;
+		height:225px;
 	}
 </style>
 </head>
@@ -51,6 +57,7 @@
 				for( Product product:product_list ){
 			%>
 			<div class="col-md-4">
+				<img src="./resources/images/<%=product.getFilename()%>"/>
 				<!-- 가져온 상품의 필드값의 get메소드를 통해 이름, 설명, 가격 순으로 출력. -->
 				<h3><%=product.getProduct_name() %></h3>
 				<p><%=product.getProduct_desc() %></p>

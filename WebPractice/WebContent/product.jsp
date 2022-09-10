@@ -6,7 +6,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+<!-- CDN 방식 사용 x --> 
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css"/>
 <meta charset="UTF-8">
 <title>Product Detail</title>
 <style>
@@ -17,6 +19,12 @@
 	body>div.container{
 		padding-top:40px;
 		padding-bottom:40px;
+	}
+	.container>.row>.col-md-5>img{
+		width:100%;
+	}
+	.container>.row>.col-md-6{
+		margin:auto;
 	}
 </style>
 </head>
@@ -38,6 +46,9 @@
 	</div>
 	<div class="container">
 		<div class="row">
+			<div class="col-md-5">
+				<img src="./resources/images/<%=product.getFilename() %>" alt="<%=product.getFilename() %>"/>
+			</div>
 			<div class="col-md-6">
 				<h3><%=product.getProduct_name() %></h3>
 				<p><%=product.getProduct_desc() %></p>
