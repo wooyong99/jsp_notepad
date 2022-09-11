@@ -6,4 +6,5 @@
   <module moduleId="org.eclipse.jst.jee.server:Jsp_Practice02" serverId="Tomcat v9.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:Jsp_Practice01" serverId="Tomcat v9.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:WebPractice" serverId="Tomcat v9.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:Jsp_Practice05_Validation" serverId="Tomcat v9.0 Server at localhost"/>
 </modules>
