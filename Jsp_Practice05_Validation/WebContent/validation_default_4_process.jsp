@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>기본 유효성 검사 -3 결과</title>
+<title>기본 유효성 검사 -4 결과</title>
 </head>
 <body>
 	<%

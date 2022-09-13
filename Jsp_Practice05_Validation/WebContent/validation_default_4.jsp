@@ -5,7 +5,7 @@
 <head>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
 <meta charset="UTF-8">
-<title>기본 유효성 검사 - 2</title>
+<title>기본 유효성 검사 - 4</title>
 <style>
 	.form-group{
 		justify-content: center;
@@ -62,7 +62,7 @@
 		<div class="text-center">
 			<h1 class="display-3">Login</h1>
 		</div>
-		<form name="login_frm" action="validation_default_2_process.jsp" method="post" class="form-horizontal">
+		<form name="login_frm" action="validation_default_4_process.jsp" method="post" class="form-horizontal">
 			<div class="form-group row">
 				<label class="col-sm-1">Name</label>
 				<div class="col-sm-3">
