@@ -12,18 +12,62 @@
 	}
 </style>
 <script type="text/javascript">
-	function checkJoin(){
-		var regExpName = /^[ㄱ-ㅎ가-힣ㅏ-ㅣ]{0,10}$/
-		var regExpId = /^[A-z\dㄱ-ㅎ가-힣ㅏ-ㅣ]{4,16}/;
-		var form = document.login_frm;
-		var name = form.name.value;
-		var id = form.id.value;
-		var pw = form.pw.value;
-		var phone1 = form.phone1.value;
-		var phone2 = form.phone2.value;
-		var phone3 = form.phone3.value;
-		var email = form.email.value;
+function checkJoin(){
+	var form = document.join_frm;
+	
+	var regExpName = /^[ㄱ-ㅎ가-힣ㅏ-ㅣ]{0,10}$/;
+	var regExpId = /^[A-z\dㄱ-ㅎ가-힣ㅏ-ㅣ]{4,16}$/;
+	var regExpPw = /^(?=.*[A-z])(?=.*[\d])(?=.*[*~!@#$%^&*])[A-z\d~!@#$%^&*]{8,16}$/;
+	var regExpPhone2 = /^[\d]{3,4}$/;
+	var regExpPhone3 = /^[\d]{4}$/;
+	var regExpEmail = /^\w*@\w*\.[a-z]{2,4}$/;
+	
+	var name = form.name.value;
+	var id = form.id.value;
+	var pw = form.pw.value;
+	var phone1 = form.phone1.value;
+	var phone2 = form.phone2.value;
+	var phone3 = form.phone3.value;
+	var email = form.email.value;
+	if (!regExpName.test(name)){
+		alert("name 유효성 검사 실패 !");
+		form.name.select();
+		form.name.focus();
+		return;
 	}
+	if (!regExpId.test(id)){
+		alert("id 유효성 검사 실패 !");
+		form.id.select();
+		form.id.focus();
+		return;
+	}
+	if(!regExpPw.test(pw)){
+		alert("pw 유효성 검사 싶패 !");
+		form.pw.select();
+		form.pw.focus();
+		return;
+	}
+	if(!regExpPhone2.test(phone2)){
+		alert("phone2 유효성 검사 실패 !")
+		form.phone2.select();
+		form.phone2.focus();
+		return;
+	}
+	if(!regExpPhone3.test(phone3)){
+		alert("phone3 유효성 검사 실패 !");
+		form.phone3.select();
+		form.phone3.focus();
+		return;
+	}
+	if(!regExpEmail.test(email)){
+		alert("이메일 유효성 검사 실패 !");
+		form.email.select();
+		form.email.focus();
+		return;
+	}
+	
+	form.submit();
+}
 </script>
 </head>
 <body>
