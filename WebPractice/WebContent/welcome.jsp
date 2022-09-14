@@ -16,13 +16,9 @@
 	String tagline="welcome to web shopping mall";
 %>
 <style>
-	.jumbotron{
+	.jumbotron, body>.container{
 		padding-top:40px;
 		padding-bottom:40px;
-	}
-	body>div.container{
-		padding-top:25px;
-		padding-bottom:25px;
 	}
 	body>hr{
 		margin-top:0;

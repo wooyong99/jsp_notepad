@@ -1,6 +1,8 @@
 <%@page import="com.exam_dao.ProductRepository"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.exam_dto.Product"%>
+<!-- 해당 페이지에서 error가 발생할 시 , errorPage를 설정해주기 위해서  errorPage="exceptionNoProductId.jsp" 코드 추가 -->
+<%@ page errorPage="exceptionNoProductId.jsp" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,11 +14,7 @@
 <meta charset="UTF-8">
 <title>Product Detail</title>
 <style>
-	.jumbotron{
-		padding-top:40px;
-		padding-bottom:40px;
-	}
-	body>div.container{
+	.jumbotron, body>.container{
 		padding-top:40px;
 		padding-bottom:40px;
 	}

@@ -11,11 +11,7 @@
 <script type="text/javascript" src="./resources/js/validation.js"></script>
 <meta charset="UTF-8">
 <style type="text/css">
-	.jumbotron{
-		padding-top:40px;
-		padding-bottom:40px;
-	}
-	body>.container{
+	.jumbotron, body>.container{
 		padding-top:40px;
 		padding-bottom:40px;
 	}

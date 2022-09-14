@@ -17,13 +17,9 @@
 <!-- 상품 목록을 저장하는 ProductRepository를 bean으로 등록하기 위해서 usebean태그 사용함. -->
 <%-- <jsp:useBean id="productDAO" class="com.exam_dao.ProductRepository" scope="session"></jsp:useBean> --%>
 <style>
-	.jumbotron{
+	.jumbotron, body>.container{
 		padding-top:40px;
 		padding-bottom:40px;
-	}
-	body>div.container{
-		padding-top:25px;
-		padding-bottom:25px;
 	}
 	body>hr{
 		margin-top:0;
