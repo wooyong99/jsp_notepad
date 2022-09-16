@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page isErrorPage="true" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,6 +26,9 @@
 		<div class="text-center">
 			<h3>Request URL : <b><%=request.getRequestURL() %></b></h3><br/>
 			<h4 class="alert alert-secondary">요청 하신 <b><%=request.getServletPath() %></b> 페이지는 존재하지 않습니다.</h4>
+			<p>
+				<a href="welcome.jsp" role="button" class="btn btn-dark">Home &raquo;</a>
+				<a href="products.jsp" role="button" class="btn btn-dark">To Product List &raquo;</a>
 		</div>
 	</div>
 	<hr/>

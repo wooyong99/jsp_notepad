@@ -21,6 +21,11 @@ request.setCharacterEncoding("UTF-8");
 	<%=customer.getEmail() %><br>
 	<%=customer.getName() %><br>
 	<%=customer.getBirth() %><br> --%>
+	${customer.id }<br>
+	${customer.pw }<br>
+	${customer.name }<br>
+	${customer.address }<br>
+	<hr/>
 	<jsp:getProperty property="id" name="customer" />
 	<jsp:getProperty property="pw" name="customer" />
 	<jsp:getProperty property="name" name="customer" />
