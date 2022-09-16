@@ -3,6 +3,10 @@ C:\Users\user\eclipse-workspace-jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\
 \Jsp_Practice05_Validation\src\main\java
 C:\Users\user\eclipse-workspace-jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3624291177.index
 \Jsp_Practice04_FileUpload\src\main\java
+C:\Users\user\eclipse-workspace-jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\598056162.index
+\Jsp_Practice06_EL_JSTL\src\main\java
+C:\Users\user\eclipse-workspace-jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2454653459.index
+\Jsp_Practice06_EL_JSTL\src\main\java
 C:\Users\user\eclipse-workspace-jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2475997242.index
 \Jsp_Practice01\src\main\java
 C:\Users\user\eclipse-workspace-jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1765849670.index
