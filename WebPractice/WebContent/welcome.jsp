@@ -2,6 +2,7 @@
 <%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +28,9 @@
 </head>
 <body>
 	<!-- jsp include 액션 태그를 이용해서 menu.jsp파일을 포함시켰다. -->
-	<jsp:include page="menu.jsp"></jsp:include>
+	<%-- <jsp:include page="menu.jsp"></jsp:include> --%>
+	<!-- jstl import 태그 사용 -->
+	<c:import url="/menu.jsp"/>
 	<div class="jumbotron bg-secondary">
 		<div class="container">
 			<div class="text-center">
@@ -48,7 +51,8 @@
 	</div>
 	<hr/>
 	<!-- jsp include 액션 태그를 이용해서 footer.jsp파일을 포함시켰다. -->
-	<jsp:include page="footer.jsp"></jsp:include>
-	
+	<%-- <jsp:include page="footer.jsp"></jsp:include> --%>
+	<!-- jstl import 태그 사용 -->
+	<c:import url="/footer.jsp"/>
 </body>
 </html>
