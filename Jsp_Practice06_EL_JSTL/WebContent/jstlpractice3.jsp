@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>JSTL 태그 라이브러리 - if 태그</title>
+<title>JSTL 태그 라이브러리 - if / choose태그</title>
 </head>
 <body>
 	<c:set var="name" value="정우용"></c:set>		
