@@ -20,14 +20,15 @@
 	<h2>c:url 출력결과</h2>
 	<p>makeurl 출력결과  :  <c:out value="${makeurl}"/></p>
 	<a href="${makeurl }">이동하기</a>
-
 	<hr/>
 	
 	<c:set var="id" value="정우용"/>
 	<h2>c:redirect 출력결과</h2>
 	<c:choose>
 		<c:when test="${empty id }">
-			<c:redirect url="http://naver.com"/>
+			<c:redirect url="/jstlpractice5.jsp">
+				<c:param name="id" value="4"/>
+			</c:redirect>
 		</c:when>
 		<c:otherwise>
 			<p>id 값은 <c:out value="${id }"/>입니다.</p>
