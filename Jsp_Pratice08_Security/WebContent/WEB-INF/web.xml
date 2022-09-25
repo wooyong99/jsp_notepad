@@ -29,6 +29,10 @@
   </security-constraint>
   <!-- security-constraint 조건에 알맞은 사용자가 접근할 경우 login-config 태그가 활성화된다. -->
   <login-config>
-  	<auth-method>BASIC</auth-method>
+  	<auth-method>FORM</auth-method>
+  	<form-login-config>
+	  	<form-login-page>/login.jsp</form-login-page>
+	  	<form-error-page>/login_fail.jsp</form-error-page>
+  	</form-login-config>
   </login-config>
 </web-app>
