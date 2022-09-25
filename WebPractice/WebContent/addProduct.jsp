@@ -36,7 +36,7 @@
 </head>
 <body>
 	<!-- 파라미터값이 없을경우 properties파일의 디폴트 값으로 번역함.
-	파라미터값이 있을 경우 setLocale하여 값에 알맞게 번역함. -->
+	파라미터값이 있을 경우 setLocale하여 값에 알맞게 번역함. -->  
 	<fmt:setLocale value="${param.language }"/>
 	<!-- com.exam_resourceBundle.message의 properties파일을 bundle 이름으로 설정 -->
 	<fmt:setBundle basename="com.exam_resourceBundle.message" var="bundle"/>
