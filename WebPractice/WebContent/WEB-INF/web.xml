@@ -14,4 +14,31 @@
 	<error-code>404</error-code>
   	<location>/exceptionNoPage.jsp</location>
   </error-page>
+  
+  <!-- Security 역할 추가, 반드시 tomcat-users.xml에 등록되어있는 역할만 지정할 수 있다. -->
+  <security-role>
+  	<role-name>admin</role-name>
+  </security-role>
+  
+  <!-- 제약(강제) 조건(경우) 추가 -->
+  <security-constraint>
+  	<!-- (웹자원) 제약조건 -->
+	<web-resource-collection>
+		<web-resource-name>WebPractice</web-resource-name>
+		<url-pattern>/addProduct.jsp</url-pattern>
+		<http-method>GET</http-method>
+	</web-resource-collection>
+	<!-- (권한) 제약조건 -->
+	<auth-constraint>
+		<role-name>admin</role-name>
+	</auth-constraint>
+  </security-constraint>
+  
+  <login-config>
+  	<auth-method>FORM</auth-method>
+  	<form-login-config>
+  		<form-login-page>/addProduct_security.jsp</form-login-page>
+		<form-error-page>/addProduct_security.jsp?error=true</form-error-page>
+  	</form-login-config>
+  </login-config>
 </web-app>

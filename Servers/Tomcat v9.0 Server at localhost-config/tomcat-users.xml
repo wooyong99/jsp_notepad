@@ -45,8 +45,10 @@
 
   <role rolename="tomcat"/>
   <role rolename="role1"/>
+  <rolr rolename="admin"/>
   <user username="tomcat" password="tomcat123" roles="tomcat"/>
   <user username="both" password="both123!" roles="tomcat,role1"/>
   <user username="role1" password="role123!" roles="role1"/>
+  <user username="admin" password="admin123" roles="admin"/>
 
 </tomcat-users>
