@@ -48,11 +48,13 @@
 			</div>
 		</div>
 	</div>
-	<div class="container">
+	<div class="container" style="padding-top:20px;">
 		<!-- Korean, En (한국어, 영어) 번역을 선택하여 다시 페이지를 요청하는 태그 생성-->
 		<div class="text-end">
 			<a href="?language=ko_KR" id="lan">Korean</a> || <a href="?language=en_US" id="lan">En</a>
-		</div>
+		</div><br>
+		<!-- 해당 페이지는 admin으로 로그인 한 경우에만 접근이 가능하므로 로그아웃 버튼 생성 -->
+		<div class="text-end"><a class="btn btn-secondary btn-sm" href="logout.jsp">로그아웃</a></div>
 		<form name="newProduct" action="./processAddProduct.jsp" method="post" class="form-horizontal" enctype="multipart/form-data">
 			<!-- 유효성 검사를 위한 자바스크립트 파일을 분리할것이므로, input 태그에 id 값을 설정함. -->
 			<div class="form-group row">
