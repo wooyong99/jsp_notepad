@@ -5,10 +5,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>AuthenFilter 처리 성공</title>
+<title>InitParamFilter 통과 성공</title>
 </head>
 <body>
-	<h1 style="color:blue;">AuthenFilter 처리 결과</h1>
-	<p>입력된 name parameter 결과 : ${param.name }</p>
+	<h1 style="color:blue;">InitParamFilter 통과 성공</h1>
+	<p>입력 ID값 : ${param.id }</p> 
+	<p>입력 PW값 : ${param.pw }</p>
 </body>
 </html>

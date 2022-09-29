@@ -16,6 +16,7 @@ public class LoggingFilter implements Filter{
 		System.out.println("====Logging Filter init 메소드 호출 (초기화)====");
 	}
 	
+	
 	/* 클라이언트의 request (요청)과 response (응답)에 따라 계속 실행됨 */
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)

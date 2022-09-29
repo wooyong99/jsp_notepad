@@ -10,7 +10,23 @@
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
   
-  <!-- request 요청에 대하여 필터(조건)을 설정하기 위해 Filter Class 명을 지정하여 url을 설정하여 매핑한다. -->
+  <!-- 1. request 요청에 대하여 필터(조건)을 설정하기 위해 Filter Class 명을 지정하여 url을 설정하여 매핑한다. -->
+  <!-- 2. 필터 태그를 활성화를 시킨다면 활성화된 필터 클래스는 톰캣 실행 시, init()메소드가 호출되어 초기화가 된다. 
+  하지만 doFilter는 url-pattern에 해당하는 경우에만 실행된다는 점을 잊지말자. -->
+  <!-- 3. 필터는 web.xml에 작성한 순서대로 실행된다. -->
+  <filter>
+  	<filter-name>logfile</filter-name>
+  	<filter-class>com.sec04.LogFileFilter</filter-class>
+  	<init-param>
+  		<param-name>filename</param-name>
+  		<param-value>C://logs/monitor.log</param-value>
+  	</init-param>
+  </filter>
+  <filter-mapping>
+  	<filter-name>logfile</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
   <filter>
   	<filter-name>logging</filter-name>
   	<filter-class>com.sec01.LoggingFilter</filter-class>
@@ -19,6 +35,7 @@
   	<filter-name>logging</filter-name>
   	<url-pattern>/filtertest.jsp</url-pattern>
   </filter-mapping>
+  
   <filter>
   	<filter-name>filterprocess</filter-name>
   	<filter-class>com.sec02.AuthenFilter</filter-class>
@@ -27,4 +44,23 @@
   	<filter-name>filterprocess</filter-name>
   	<url-pattern>/filter01_process.jsp</url-pattern>
   </filter-mapping>
+  
+  <filter>
+  	<filter-name>initparam</filter-name>
+  	<filter-class>com.sec03.InitParamFilter</filter-class>
+  	<!-- 초기화 파라미터 설정 부분 -->
+  	<init-param>
+  		<param-name>param1</param-name>
+  		<param-value>정우용</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>param2</param-name>
+  		<param-value>1234</param-value>
+  	</init-param>
+  </filter>
+  <filter-mapping>
+  	<filter-name>initparam</filter-name>
+  	<url-pattern>/filter02_process.jsp</url-pattern>
+  </filter-mapping>
+  
 </web-app>

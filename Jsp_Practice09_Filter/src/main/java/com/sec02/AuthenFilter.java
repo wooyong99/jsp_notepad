@@ -22,19 +22,19 @@ public class AuthenFilter implements Filter{
 			throws IOException, ServletException {
 		System.out.println("AuthenFilter 필터 (요청 처리)");
 		String name = request.getParameter("name");
-		System.out.println("요청 파라미터 : "+name);
 		if(name.isEmpty()) {
 			response.setCharacterEncoding("UTF-8");
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.println("<title>Authen Filter 처리실패</title>");
-			out.println("<h1>AuthenFilter 처리 실패</h1><br>");
+			out.println("<h1 style='color:red;'>AuthenFilter 처리 실패</h1><br>");
 			out.println("<p>입력된 값이 null입니다.</p>");
+			System.out.println("AuthenFilter 필터 (응답 처리)");
 			return;
 		}
 		chain.doFilter(request, response);
 		
-		System.out.println("AuthenFilter 필터 (요청 처리)");
+		System.out.println("AuthenFilter 필터 (응답 처리)");
 	}
 	
 	@Override
