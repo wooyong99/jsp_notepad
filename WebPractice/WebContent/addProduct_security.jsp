@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,8 +32,8 @@
 		</div>
 	</div>
 	<div class="container" style="margin-top:30px;">
-		<div class="text-center">
-			<form name="lgn_frm" action="j_security_check" method="post" class="form-horizontal">
+		<div class="text-center">	
+			<form name="lgn_frm" action="j_security_check" method="get" class="form-horizontal">
 				<div class="row">
 					<div class="col-11">
 						<label class="col-sm-1 col-form-label"><b>ID</b></label>
