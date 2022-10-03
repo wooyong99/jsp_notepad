@@ -25,6 +25,17 @@
 		margin:auto;
 	}
 </style>
+<!-- 장바구니 추가 확인을 요청하는 핸들러 함수 -->
+<script>
+	function addToCart() {
+		if(confirm("해당 상품을 장바구니에 추가하시겠습니까 ?")){
+			document.addForm.submit();
+		}else{
+			document.addForm.reset();
+		}
+		
+	}
+</script>
 </head>
 <body>
 	<jsp:include page="menu.jsp"></jsp:include>
@@ -55,8 +66,15 @@
 				<p><b>분류 : </b><%=product.getCategory() %></p>
 				<p><b>수량 : </b><%=product.getProduct_stock() %></p>
 				<h4><%= product.getProduct_price() %>원</h4>
-				<p><a href="#" class="btn btn-dark" role="button">Order &raquo;</a>
-				<a href="./products.jsp" class="btn btn-dark" role="button">To Product List &raquo;</a></p>
+				<p>
+					<form name="addForm" action="./addCart.jsp?id=<%= product.getProduct_Id()%>" method="get">
+						<!-- 상품 주문을 클릭할 경우 javascript의 핸들러 함수(addToCart)가 호출되도록 설정 -->
+						<a href="#" class="btn btn-dark" role="button" onclick="addToCart()">Order &raquo;</a>
+						<!-- 장바구니 버튼을 클릭할 경우 cart.jsp로 이동하도록 설정 -->
+						<a href="./cart.jsp" class="btn btn-dark" role="button">장바구니 &raquo;</a>
+						<a href="./products.jsp" class="btn btn-dark" role="button">To Product List &raquo;</a>
+					</form>
+				</p>
 			</div>
 			
 		</div>

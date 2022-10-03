@@ -9,7 +9,9 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
-  
+  <listener>
+  	<listener-class>com.exam_listener.ContextListener</listener-class>
+  </listener>
   <error-page>
 	<error-code>404</error-code>
   	<location>/exceptionNoPage.jsp</location>

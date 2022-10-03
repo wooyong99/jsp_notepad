@@ -16,6 +16,8 @@ public class Product implements Serializable{
 	private long product_stock;
 	private String condition;
 	private String filename;
+	private int quantiy;
+
 
 	public Product() {
 	}
@@ -28,6 +30,13 @@ public class Product implements Serializable{
 		this.product_Id = product_Id;
 		this.product_name = product_name;
 		this.product_price = product_price;
+	}
+	public int getQuantiy() {
+		return quantiy;
+	}
+	
+	public void setQuantiy(int quantiy) {
+		this.quantiy = quantiy;
 	}
 
 	public void setProduct_Id(String product_Id) {
