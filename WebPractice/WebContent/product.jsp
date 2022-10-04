@@ -67,9 +67,10 @@
 				<p><b>수량 : </b><%=product.getProduct_stock() %></p>
 				<h4><%= product.getProduct_price() %>원</h4>
 				<p>
-					<form name="addForm" action="./addCart.jsp?id=<%= product.getProduct_Id()%>" method="get">
+					<form name="addForm" action="./addCart.jsp?" method="get">
 						<!-- 상품 주문을 클릭할 경우 javascript의 핸들러 함수(addToCart)가 호출되도록 설정 -->
 						<a href="#" class="btn btn-dark" role="button" onclick="addToCart()">Order &raquo;</a>
+						<input type="hidden" name="id" value="<%=product.getProduct_Id() %>"/>
 						<!-- 장바구니 버튼을 클릭할 경우 cart.jsp로 이동하도록 설정 -->
 						<a href="./cart.jsp" class="btn btn-dark" role="button">장바구니 &raquo;</a>
 						<a href="./products.jsp" class="btn btn-dark" role="button">To Product List &raquo;</a>
