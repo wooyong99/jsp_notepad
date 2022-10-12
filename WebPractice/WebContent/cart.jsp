@@ -12,6 +12,10 @@
 <style>
 	.jumbotron{
 		padding:40px 0;
+		margin-bottom:20px;
+	}
+	a{
+		text-decoration: none;
 	}
 </style>
 <script type="text/javascript">
@@ -20,19 +24,20 @@
 		return;
 	}
 </script>
-<%
-	ArrayList<Product> cartlist = new ArrayList<>();
-	if(session.getAttribute("cartlist")==null){
-	%>
-		<script>error_alert();</script>
-<%
-		response.sendRedirect("products.jsp");
-	}else{
-		cartlist = (ArrayList<Product>)session.getAttribute("cartlist");
-	}
-%>
 </head>
 <body>
+	<%
+		ArrayList<Product> cartlist = (ArrayList<Product>)session.getAttribute("cartlist");
+		if(session.getAttribute("cartlist")==null || cartlist.size()==0){
+		%>
+			<script>error_alert();</script>
+	<%
+			response.sendRedirect("products.jsp");
+			return;
+		}else{
+			cartlist = (ArrayList<Product>)session.getAttribute("cartlist");
+		}
+	%>
 	<jsp:include page="menu.jsp"></jsp:include>
 	<div class="jumbotron bg-secondary">
 		<div class="container">
@@ -56,7 +61,7 @@
 				</tr>
 			</table>
 		</div>
-		<div style="padding-top : 50px; bakcground-color:yellow;">
+		<div style="padding-top : 50px;">
 			<table class="table table-hover">
 				<tr>
 					<th>상품</th>
@@ -70,7 +75,7 @@
 					/* session 내장객체에 담은 장바구니 리스트(cartlist)를 가져오는 코드 */
 					/* 장바구니 리스트를 row별 출력 */
 					for(Product product : cartlist){
-						int total = (int)product.getProduct_stock() * product.getQuantity();
+						int total = (int)product.getProduct_price() * product.getQuantity();
 						sum+=total;
 				%>
 				<tr>
@@ -78,7 +83,7 @@
 					<td><%=product.getProduct_price() %></td>
 					<td><%=product.getQuantity() %></td>
 					<td><%=total %></td>
-					<td><a href="/removeCart.jsp?id=<%=product.getProduct_Id() %>" class="badge badge-danger">Delete</a></td>
+					<td><a href="removeCart.jsp?id=<%=product.getProduct_Id() %>" class="badge bg-danger" role="button">Delete</a></td>
 				</tr>
 				<%} %>
 				<tr>
