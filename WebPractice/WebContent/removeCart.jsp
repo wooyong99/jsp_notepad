@@ -29,6 +29,7 @@
 		/* 내장객체 세션에서 cartlist가져오기 */
 		ArrayList<Product> cartlist = (ArrayList<Product>)session.getAttribute("cartlist");
 		
+		/* cartlist.removeIf(item -> item.getProduct_Id().equals(id)); */
 		for(Product removeProduct : cartlist){
 			if( id.equals(removeProduct.getProduct_Id())){
 				cartlist.remove(removeProduct);

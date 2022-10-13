@@ -27,8 +27,9 @@
 </head>
 <body>
 	<%
-		ArrayList<Product> cartlist = (ArrayList<Product>)session.getAttribute("cartlist");
-		if(session.getAttribute("cartlist")==null || cartlist.size()==0){
+		String cartId = session.getId();
+		ArrayList<Product> cartlist = new ArrayList<>();
+		if(session.getAttribute("cartlist")==null){
 		%>
 			<script>error_alert();</script>
 	<%
@@ -52,7 +53,7 @@
 				<tr>
 					<td align="left">
 						<!-- 장바구니에서 상품을 삭제하는 버튼 -->
-						<a href="#" class="btn btn-danger">삭제하기</a>
+						<a href="deleteCart.jsp?cartId=<%=cartId %>" class="btn btn-danger">삭제하기</a>
 					</td>
 					<td align="right">
 						<!-- 장바구니에서 상품을 주문하는 버튼 -->
